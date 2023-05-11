@@ -13,7 +13,7 @@ class NotesHandler {
     this.deleteNoteByIdHandler = this.deleteNoteByIdHandler.bind(this);
   }
 
-  postNoteHander(request, h) {
+  postNoteHandler(request, h) {
     try {
       const { title = 'untitled', body, tags } = request.payload;
 
@@ -99,7 +99,7 @@ class NotesHandler {
     } catch (error) {
       const response = h.response({
         status: 'fail',
-        message: error.message,
+        message: 'Catatan gagal dihapus. Id tidak ditemukan',
       });
       response.code(404);
       return response;
