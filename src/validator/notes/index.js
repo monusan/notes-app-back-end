@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
 const InvariantError = require('../../exceptions/InvariantError');
+const { NotePayloadSchema } = require('./schema');
 
 const NotesValidator = {
   validateNotePayload: (payload) => {

@@ -18,7 +18,7 @@ class NotesHandler {
 
   postNoteHandler(request, h) {
     try {
-      this._validator.validateNotePayLoad(request.payload);
+      this._validator.validateNotePayload(request.payload);
       const { title = 'untitled', body, tags } = request.payload;
 
       const noteId = this._service.addNote({ title, body, tags });
@@ -130,6 +130,7 @@ class NotesHandler {
     try {
       const { id } = request.params;
       this._service.deleteNoteById(id);
+
       return {
         status: 'success',
         message: 'Catatan berhasil dihapus',
